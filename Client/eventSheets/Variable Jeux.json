@@ -3,13 +3,23 @@
 	"events": [
 		{
 			"eventType": "variable",
+			"name": "UUID",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 231957410811962
+		},
+		{
+			"eventType": "variable",
 			"name": "HostName",
 			"type": "string",
 			"initialValue": "Serveur",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 427976939485054
+			"sid": 549840372315540
 		}
 	],
 	"sid": 901677141311322

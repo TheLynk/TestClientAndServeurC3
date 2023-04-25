@@ -27,9 +27,103 @@
 						"variable": "HostName",
 						"value": "\"Serveur\" & projectversion"
 					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 134157092341366,
+					"parameters": {
+						"key": "\"UUID\""
+					}
 				}
 			],
 			"sid": 186882079146099
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "LocalStorage",
+					"sid": 979332697729971,
+					"parameters": {
+						"key": "\"UUID\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 912389151151740,
+			"children": [
+				{
+					"eventType": "script",
+					"script": "runtime.globalVars.UUID = (Math.round(Date.now() * performance.now())).toString()"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 684896037500111,
+							"parameters": {
+								"key": "\"UUID\"",
+								"value": "UUID"
+							}
+						}
+					],
+					"sid": 193818458218258
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 638713777754026,
+					"parameters": {
+						"key": "\"UUID\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 880330428059517,
+					"parameters": {
+						"key": "\"UUID\""
+					}
+				}
+			],
+			"sid": 921618910245464
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 174656338946072,
+					"parameters": {
+						"key": "\"UUID\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 155807072846238,
+					"parameters": {
+						"variable": "UUID",
+						"value": "LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 626948686905552
 		},
 		{
 			"eventType": "block",
@@ -65,9 +159,9 @@
 				{
 					"id": "log-in",
 					"objectClass": "Multiplayer",
-					"sid": 257069275761259,
+					"sid": 473768247108305,
 					"parameters": {
-						"alias": "\"Test\""
+						"alias": "UUID"
 					}
 				}
 			],
