@@ -1,5 +1,5 @@
 {
-	"name": "Event sheet 1",
+	"name": "Event Jeux",
 	"events": [
 		{
 			"eventType": "block",
@@ -56,9 +56,9 @@
 				{
 					"id": "log-in",
 					"objectClass": "Multiplayer",
-					"sid": 343170934004944,
+					"sid": 257069275761259,
 					"parameters": {
-						"alias": "\"serveur\""
+						"alias": "\"Test\""
 					}
 				}
 			],
@@ -108,6 +108,45 @@
 				}
 			],
 			"sid": 795368290811587
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 137135124859236,
+					"parameters": {
+						"variable": "HostName",
+						"comparison": 1,
+						"value": "\"Serveur\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 308767903883834,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "disconnect-signalling",
+					"objectClass": "Multiplayer",
+					"sid": 172992002766461
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TextConnection",
+					"sid": 269109278332373,
+					"parameters": {
+						"text": "\"Connection Status : Erreur Serveur\""
+					}
+				}
+			],
+			"sid": 344629392773605
 		}
 	],
 	"sid": 423672231501610

@@ -37,14 +37,14 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Serveur Manager"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1",
-			"Variable"
+			"Event Serveur",
+			"Variable Serveur"
 		],
 		"subfolders": []
 	},

@@ -1,0 +1,16 @@
+{
+	"name": "Variable Jeux",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "HostName",
+			"type": "string",
+			"initialValue": "Serveur",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 427976939485054
+		}
+	],
+	"sid": 901677141311322
+}

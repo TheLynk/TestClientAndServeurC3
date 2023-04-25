@@ -1,5 +1,5 @@
 {
-	"name": "Event sheet 1",
+	"name": "Event Serveur",
 	"events": [
 		{
 			"eventType": "block",
@@ -56,9 +56,9 @@
 				{
 					"id": "log-in",
 					"objectClass": "Multiplayer",
-					"sid": 257069275761259,
+					"sid": 135995836435494,
 					"parameters": {
-						"alias": "\"Test\""
+						"alias": "\"Serveur\""
 					}
 				}
 			],
@@ -101,44 +101,13 @@
 				{
 					"id": "set-text",
 					"objectClass": "TextConnection",
-					"sid": 159985143333730,
+					"sid": 851845478489531,
 					"parameters": {
-						"text": "\"Connection Status : Ok\" & newline & Multiplayer.HostAlias"
+						"text": "\"Connection Status : Serveur En Ligne\" & newline & Multiplayer.HostAlias"
 					}
 				}
 			],
 			"sid": 795368290811587
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 969994952008123,
-					"parameters": {
-						"first-value": "Multiplayer.HostAlias",
-						"comparison": 1,
-						"second-value": "\"serveur\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "disconnect-signalling",
-					"objectClass": "Multiplayer",
-					"sid": 172992002766461
-				},
-				{
-					"id": "set-text",
-					"objectClass": "TextConnection",
-					"sid": 269109278332373,
-					"parameters": {
-						"text": "\"Connection Status : Erreur Serveur\""
-					}
-				}
-			],
-			"sid": 344629392773605
 		}
 	],
 	"sid": 423672231501610
