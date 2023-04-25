@@ -8,8 +8,22 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Multiplayer",
 			"name": "Multiplayer",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "NodeWebkit",
+			"name": "NW.js",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -19,6 +33,13 @@
 			"name": "Text",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "dyicchef01d",
@@ -26,7 +47,11 @@
 		"items": [
 			"Multiplayer",
 			"TextInformationServeur",
-			"TextNombreJoueur"
+			"TextNombreJoueur",
+			"TextInputLogServeur",
+			"NWjs",
+			"TextInputLogApplication",
+			"Audio"
 		],
 		"subfolders": []
 	},
@@ -55,7 +80,24 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "Ding - Sound Effect (HD).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 697853814029415,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bruit de porte qui claque.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 599640130778825,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {

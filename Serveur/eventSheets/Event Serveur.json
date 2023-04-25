@@ -18,6 +18,14 @@
 					"parameters": {
 						"server": "\"wss://multiplayer.scirra.com\""
 					}
+				},
+				{
+					"id": "append-text",
+					"objectClass": "TextInputLogServeur",
+					"sid": 708919901308492,
+					"parameters": {
+						"text": "\"Démarage du serveur version : \" & projectversion & newline"
+					}
 				}
 			],
 			"sid": 186882079146099
@@ -39,6 +47,14 @@
 					"parameters": {
 						"server": "\"wss://multiplayer.scirra.com\""
 					}
+				},
+				{
+					"id": "append-text",
+					"objectClass": "TextInputLogServeur",
+					"sid": 399977855239477,
+					"parameters": {
+						"text": "\"Une Déconnection a était detecter ! ! !\" & newline"
+					}
 				}
 			],
 			"sid": 647017259111471
@@ -59,6 +75,14 @@
 					"sid": 896517428585630,
 					"parameters": {
 						"alias": "\"Serveur\" & projectversion"
+					}
+				},
+				{
+					"id": "append-text",
+					"objectClass": "TextInputLogServeur",
+					"sid": 864951849751275,
+					"parameters": {
+						"text": "\"Connection au Serveur Scirra Fini\" & newline"
 					}
 				}
 			],
@@ -84,6 +108,14 @@
 						"room": "\"Principale\"",
 						"max-peers": "0"
 					}
+				},
+				{
+					"id": "append-text",
+					"objectClass": "TextInputLogServeur",
+					"sid": 434504604177710,
+					"parameters": {
+						"text": "\"Connection au Serveur Scirra 2 Fini\" & newline"
+					}
 				}
 			],
 			"sid": 564944706962670
@@ -104,6 +136,14 @@
 					"sid": 136276032105323,
 					"parameters": {
 						"text": "\"Version : \"& projectversion &newline & \"Connection Status : Serveur En Ligne\" & newline & Multiplayer.HostAlias"
+					}
+				},
+				{
+					"id": "append-text",
+					"objectClass": "TextInputLogServeur",
+					"sid": 701709971730049,
+					"parameters": {
+						"text": "\"Serveur Opérationnelle\" & newline"
 					}
 				}
 			],
@@ -135,6 +175,26 @@
 					"parameters": {
 						"text": "\"Nombre de Joueur : \" & NombreJoueur"
 					}
+				},
+				{
+					"id": "append-text",
+					"objectClass": "TextInputLogServeur",
+					"sid": 118675651721596,
+					"parameters": {
+						"text": "Multiplayer.PeerAlias & \" Viens de rejoindre le serveur\" & newline"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 735377678614967,
+					"parameters": {
+						"audio-file": "Ding - Sound Effect (HD)",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
 				}
 			],
 			"sid": 237993825408037
@@ -164,6 +224,26 @@
 					"sid": 377665201720317,
 					"parameters": {
 						"text": "\"Nombre de Joueur : \" & NombreJoueur"
+					}
+				},
+				{
+					"id": "append-text",
+					"objectClass": "TextInputLogServeur",
+					"sid": 506638249182166,
+					"parameters": {
+						"text": "Multiplayer.FromAlias & \"Viens de quitter le serveur\" & newline"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 611322649511005,
+					"parameters": {
+						"audio-file": "bruit de porte qui claque",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
 					}
 				}
 			],
