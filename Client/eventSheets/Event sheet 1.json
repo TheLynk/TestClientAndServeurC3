@@ -1,0 +1,145 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 750453843868049
+				}
+			],
+			"actions": [
+				{
+					"id": "connect",
+					"objectClass": "Multiplayer",
+					"sid": 311811437663426,
+					"parameters": {
+						"server": "\"wss://multiplayer.scirra.com\""
+					}
+				}
+			],
+			"sid": 186882079146099
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-disconnected",
+					"objectClass": "Multiplayer",
+					"sid": 713926811829604
+				}
+			],
+			"actions": [
+				{
+					"id": "connect",
+					"objectClass": "Multiplayer",
+					"sid": 685723131931748,
+					"parameters": {
+						"server": "\"wss://multiplayer.scirra.com\""
+					}
+				}
+			],
+			"sid": 647017259111471
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-connected",
+					"objectClass": "Multiplayer",
+					"sid": 296241571397157
+				}
+			],
+			"actions": [
+				{
+					"id": "log-in",
+					"objectClass": "Multiplayer",
+					"sid": 257069275761259,
+					"parameters": {
+						"alias": "\"Test\""
+					}
+				}
+			],
+			"sid": 673866142714605
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-logged-in",
+					"objectClass": "Multiplayer",
+					"sid": 477819252849117
+				}
+			],
+			"actions": [
+				{
+					"id": "join-room",
+					"objectClass": "Multiplayer",
+					"sid": 356791685171477,
+					"parameters": {
+						"game": "\"FactoryClientServeur111111111\"",
+						"instance": "\"default\"",
+						"room": "\"1\"",
+						"max-peers": "0"
+					}
+				}
+			],
+			"sid": 564944706962670
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-joined-room",
+					"objectClass": "Multiplayer",
+					"sid": 846955780756400
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "TextConnection",
+					"sid": 159985143333730,
+					"parameters": {
+						"text": "\"Connection Status : Ok\" & newline & Multiplayer.HostAlias"
+					}
+				}
+			],
+			"sid": 795368290811587
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 969994952008123,
+					"parameters": {
+						"first-value": "Multiplayer.HostAlias",
+						"comparison": 1,
+						"second-value": "\"serveur\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "disconnect-signalling",
+					"objectClass": "Multiplayer",
+					"sid": 172992002766461
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TextConnection",
+					"sid": 269109278332373,
+					"parameters": {
+						"text": "\"Connection Status : Erreur Serveur\""
+					}
+				}
+			],
+			"sid": 344629392773605
+		}
+	],
+	"sid": 423672231501610
+}
