@@ -1,7 +1,7 @@
 {
-	"name": "TextConnection",
+	"name": "TextNombreJoueur",
 	"plugin-id": "Text",
-	"sid": 717657170135550,
+	"sid": 122142395924541,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],

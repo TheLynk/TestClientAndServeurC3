@@ -18,6 +18,15 @@
 					"parameters": {
 						"server": "\"wss://multiplayer.scirra.com\""
 					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 674583724498781,
+					"parameters": {
+						"variable": "HostName",
+						"value": "\"Serveur\" & projectversion"
+					}
 				}
 			],
 			"sid": 186882079146099
@@ -77,11 +86,11 @@
 				{
 					"id": "join-room",
 					"objectClass": "Multiplayer",
-					"sid": 356791685171477,
+					"sid": 382582840155425,
 					"parameters": {
-						"game": "\"FactoryClientServeur111111111\"",
-						"instance": "\"default\"",
-						"room": "\"1\"",
+						"game": "\"TestClientServeurC3\"",
+						"instance": "\"Principale\"",
+						"room": "\"Principale\"",
 						"max-peers": "0"
 					}
 				}
@@ -115,23 +124,15 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 137135124859236,
+					"sid": 424949313060065,
 					"parameters": {
 						"variable": "HostName",
 						"comparison": 1,
-						"value": "\"Serveur\""
+						"value": "\"Serveur\" & projectversion"
 					}
 				}
 			],
 			"actions": [
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 308767903883834,
-					"parameters": {
-						"seconds": "1.0"
-					}
-				},
 				{
 					"id": "disconnect-signalling",
 					"objectClass": "Multiplayer",

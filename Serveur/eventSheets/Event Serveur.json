@@ -56,9 +56,9 @@
 				{
 					"id": "log-in",
 					"objectClass": "Multiplayer",
-					"sid": 135995836435494,
+					"sid": 896517428585630,
 					"parameters": {
-						"alias": "\"Serveur\""
+						"alias": "\"Serveur\" & projectversion"
 					}
 				}
 			],
@@ -77,11 +77,11 @@
 				{
 					"id": "join-room",
 					"objectClass": "Multiplayer",
-					"sid": 356791685171477,
+					"sid": 375234896735199,
 					"parameters": {
-						"game": "\"FactoryClientServeur111111111\"",
-						"instance": "\"default\"",
-						"room": "\"1\"",
+						"game": "\"TestClientServeurC3\"",
+						"instance": "\"Principale\"",
+						"room": "\"Principale\"",
 						"max-peers": "0"
 					}
 				}
@@ -100,14 +100,74 @@
 			"actions": [
 				{
 					"id": "set-text",
-					"objectClass": "TextConnection",
-					"sid": 851845478489531,
+					"objectClass": "TextInformationServeur",
+					"sid": 136276032105323,
 					"parameters": {
-						"text": "\"Connection Status : Serveur En Ligne\" & newline & Multiplayer.HostAlias"
+						"text": "\"Version : \"& projectversion &newline & \"Connection Status : Serveur En Ligne\" & newline & Multiplayer.HostAlias"
 					}
 				}
 			],
 			"sid": 795368290811587
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-connected",
+					"objectClass": "Multiplayer",
+					"sid": 764554742802933
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 253260183160806,
+					"parameters": {
+						"variable": "NombreJoueur",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TextNombreJoueur",
+					"sid": 499197561899235,
+					"parameters": {
+						"text": "\"Nombre de Joueur : \" & NombreJoueur"
+					}
+				}
+			],
+			"sid": 237993825408037
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-disconnected",
+					"objectClass": "Multiplayer",
+					"sid": 876190544743538
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 720962718145981,
+					"parameters": {
+						"variable": "NombreJoueur",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TextNombreJoueur",
+					"sid": 377665201720317,
+					"parameters": {
+						"text": "\"Nombre de Joueur : \" & NombreJoueur"
+					}
+				}
+			],
+			"sid": 882456055282091
 		}
 	],
 	"sid": 423672231501610

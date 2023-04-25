@@ -1,5 +1,16 @@
 {
 	"name": "Variable Serveur",
-	"events": [],
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "NombreJoueur",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 645143238640204
+		}
+	],
 	"sid": 901677141311322
 }
