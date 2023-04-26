@@ -179,9 +179,9 @@
 				{
 					"id": "append-text",
 					"objectClass": "TextInputLogServeur",
-					"sid": 118675651721596,
+					"sid": 541960475078811,
 					"parameters": {
-						"text": "Multiplayer.PeerAlias & \" Viens de rejoindre le serveur\" & newline"
+						"text": "Multiplayer.PeerAlias & \" | \" & Multiplayer.PeerID & \" Viens de rejoindre le serveur\" & newline"
 					}
 				},
 				{
@@ -248,6 +248,41 @@
 				}
 			],
 			"sid": 882456055282091
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-message",
+					"objectClass": "Multiplayer",
+					"sid": 308900351101753,
+					"parameters": {
+						"tag": "\"debugmessage\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "append-text",
+					"objectClass": "TextInputLogServeur",
+					"sid": 351331085403907,
+					"parameters": {
+						"text": "Multiplayer.FromAlias & \" : \" & Multiplayer.Message & newline"
+					}
+				},
+				{
+					"id": "broadcast-message",
+					"objectClass": "Multiplayer",
+					"sid": 721320322746696,
+					"parameters": {
+						"from-id": "Multiplayer.FromAlias",
+						"tag": "\"debugmessage\"",
+						"message": "Multiplayer.Message",
+						"mode": "reliable-ordered"
+					}
+				}
+			],
+			"sid": 227030387588864
 		}
 	],
 	"sid": 423672231501610

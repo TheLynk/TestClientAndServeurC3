@@ -129,12 +129,29 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-disconnected",
+					"id": "is-connected",
 					"objectClass": "Multiplayer",
-					"sid": 713926811829604
+					"sid": 256114091913580,
+					"isInverted": true
 				}
 			],
 			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "TextConnection",
+					"sid": 902565170963601,
+					"parameters": {
+						"text": "\"Connection Status : Erreur de connection\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 894911882463076,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
 				{
 					"id": "connect",
 					"objectClass": "Multiplayer",
@@ -204,9 +221,9 @@
 				{
 					"id": "set-text",
 					"objectClass": "TextConnection",
-					"sid": 159985143333730,
+					"sid": 909273819673367,
 					"parameters": {
-						"text": "\"Connection Status : Ok\" & newline & Multiplayer.HostAlias"
+						"text": "\"Connection Status : Ok\" & newline \n& \"Host Alias : \" & Multiplayer.HostAlias  & newline\n& \"Peer Alias : \" & Multiplayer.PeerAlias & newline\n& \"Peer ID : \" & Multiplayer.PeerID"
 					}
 				}
 			],
@@ -239,9 +256,163 @@
 					"parameters": {
 						"text": "\"Connection Status : Erreur Serveur\""
 					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 845199857258110,
+					"parameters": {
+						"seconds": "1.0"
+					}
 				}
 			],
 			"sid": 344629392773605
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Button",
+					"sid": 489896392893680
+				}
+			],
+			"actions": [
+				{
+					"id": "send-message",
+					"objectClass": "Multiplayer",
+					"sid": 380966147483339,
+					"parameters": {
+						"peer-id": "\"\"",
+						"tag": "\"debugmessage\"",
+						"message": "TextInputMessageDebug.Text",
+						"mode": "reliable-ordered"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TextInputMessageDebug",
+					"sid": 857777314861525,
+					"parameters": {
+						"text": "\"\""
+					}
+				}
+			],
+			"sid": 311733890323494
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-focused",
+					"objectClass": "TextInputMessageDebug",
+					"sid": 349501367276575
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 323205005107951,
+					"parameters": {
+						"key": 13
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-unfocused",
+					"objectClass": "TextInputMessageDebug",
+					"sid": 747805198302247
+				},
+				{
+					"id": "send-message",
+					"objectClass": "Multiplayer",
+					"sid": 834517411030141,
+					"parameters": {
+						"peer-id": "\"\"",
+						"tag": "\"debugmessage\"",
+						"message": "TextInputMessageDebug.Text",
+						"mode": "reliable-ordered"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TextInputMessageDebug",
+					"sid": 544305538444733,
+					"parameters": {
+						"text": "\"\""
+					}
+				},
+				{
+					"id": "set-focused",
+					"objectClass": "TextInputMessageDebug",
+					"sid": 614211596888085
+				}
+			],
+			"sid": 189851722389232
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-message",
+					"objectClass": "Multiplayer",
+					"sid": 709451676270638,
+					"parameters": {
+						"tag": "\"debugmessage\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 574389056689281,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 449169597657817,
+							"parameters": {
+								"first-value": "Multiplayer.FromID",
+								"comparison": 0,
+								"second-value": "UUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "append-text",
+							"objectClass": "TextInputTChat",
+							"sid": 473508492079183,
+							"parameters": {
+								"text": "\"You : \" & Multiplayer.Message & newline"
+							}
+						}
+					],
+					"sid": 182096514335277
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 505398354567741
+						}
+					],
+					"actions": [
+						{
+							"id": "append-text",
+							"objectClass": "TextInputTChat",
+							"sid": 929832375632969,
+							"parameters": {
+								"text": "Multiplayer.FromID & \" : \" & Multiplayer.Message & newline"
+							}
+						}
+					],
+					"sid": 196164705798937
+				}
+			]
 		}
 	],
 	"sid": 423672231501610

@@ -2,6 +2,10 @@
 	"name": "Variable Jeux",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "Config Super Admin"
+		},
+		{
 			"eventType": "variable",
 			"name": "UUID",
 			"type": "string",
@@ -20,6 +24,20 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 549840372315540
+		},
+		{
+			"eventType": "comment",
+			"text": "Config Joueur"
+		},
+		{
+			"eventType": "variable",
+			"name": "Langue",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 785471306522771
 		}
 	],
 	"sid": 901677141311322
