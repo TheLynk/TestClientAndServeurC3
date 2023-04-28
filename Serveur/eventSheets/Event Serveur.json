@@ -283,6 +283,106 @@
 				}
 			],
 			"sid": 227030387588864
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-message",
+					"objectClass": "Multiplayer",
+					"sid": 608371950331233,
+					"parameters": {
+						"tag": "\"LoadData\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "append-text",
+					"objectClass": "TextInputLogServeur",
+					"sid": 970029943087661,
+					"parameters": {
+						"text": "\"LoadData\" & newline"
+					}
+				},
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 694050951186927,
+					"parameters": {
+						"key": "Multiplayer.FromAlias"
+					}
+				}
+			],
+			"sid": 713008156560103
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 883136581537570,
+					"parameters": {
+						"key": "Multiplayer.FromAlias"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "Array",
+					"sid": 451164433254339,
+					"parameters": {
+						"json": "LocalStorage.ItemValue"
+					}
+				},
+				{
+					"id": "send-message",
+					"objectClass": "Multiplayer",
+					"sid": 745449829835166,
+					"parameters": {
+						"peer-id": "Multiplayer.FromID",
+						"tag": "\"HostToPeerData\"",
+						"message": "Array.AsJSON",
+						"mode": "reliable-ordered"
+					}
+				}
+			],
+			"sid": 730310623999374
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-message",
+					"objectClass": "Multiplayer",
+					"sid": 367476176883317,
+					"parameters": {
+						"tag": "\"PeerToHostData\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "append-text",
+					"objectClass": "TextInputLogServeur",
+					"sid": 634152694604190,
+					"parameters": {
+						"text": "\"PeerToHostData\" & newline"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 193117898038509,
+					"parameters": {
+						"key": "Multiplayer.FromAlias",
+						"value": "Multiplayer.Message"
+					}
+				}
+			],
+			"sid": 447106125051114
 		}
 	],
 	"sid": 423672231501610

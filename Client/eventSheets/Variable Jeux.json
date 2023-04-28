@@ -2,6 +2,16 @@
 	"name": "Variable Jeux",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "DataLoad",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 121328497280173
+		},
+		{
 			"eventType": "comment",
 			"text": "Config Super Admin"
 		},

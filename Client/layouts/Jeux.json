@@ -83,7 +83,7 @@
 					}
 				},
 				{
-					"type": "Button",
+					"type": "ButtonSend",
 					"properties": {
 						"type": "button",
 						"text": "Send",
@@ -145,6 +145,37 @@
 							1
 						]
 					}
+				},
+				{
+					"type": "ButtonSave",
+					"properties": {
+						"type": "button",
+						"text": "Save",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": ""
+					},
+					"uid": 10,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 384,
+						"y": 224,
+						"width": 72,
+						"height": 24,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
 				}
 			],
 			"sid": 929390731171446,
@@ -177,7 +208,18 @@
 		}
 	],
 	"sid": 830167244427004,
-	"nonworld-instances": [],
+	"nonworld-instances": [
+		{
+			"type": "Array",
+			"properties": {
+				"width": 10,
+				"height": 10,
+				"depth": 1
+			},
+			"uid": 9,
+			"instanceVariables": {}
+		}
+	],
 	"effectTypes": [],
 	"width": 3840,
 	"height": 2160,

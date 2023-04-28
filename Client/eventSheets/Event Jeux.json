@@ -272,8 +272,41 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 772085731944169
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 327360012982743,
+					"parameters": {
+						"variable": "DataLoad"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "send-message",
+					"objectClass": "Multiplayer",
+					"sid": 772441073604986,
+					"parameters": {
+						"peer-id": "\"\"",
+						"tag": "\"LoadData\"",
+						"message": "\"\"",
+						"mode": "reliable-ordered"
+					}
+				}
+			],
+			"sid": 961723674021844
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-clicked",
-					"objectClass": "Button",
+					"objectClass": "ButtonSend",
 					"sid": 489896392893680
 				}
 			],
@@ -413,6 +446,96 @@
 					"sid": 196164705798937
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-message",
+					"objectClass": "Multiplayer",
+					"sid": 887715079447140,
+					"parameters": {
+						"tag": "\"HostToPeerData\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "append-text",
+					"objectClass": "TextInputTChat",
+					"sid": 900008541845603,
+					"parameters": {
+						"text": "\"HostToPeerData\" & newline"
+					}
+				},
+				{
+					"id": "load",
+					"objectClass": "Array",
+					"sid": 547175773379906,
+					"parameters": {
+						"json": "Multiplayer.Message"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 883102828632802,
+					"parameters": {
+						"variable": "DataLoad",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 554276464629726
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "ButtonSave",
+					"sid": 184758156430360
+				}
+			],
+			"actions": [
+				{
+					"id": "set-at-x",
+					"objectClass": "Array",
+					"sid": 603468169681271,
+					"parameters": {
+						"x": "0",
+						"value": "int(random(0, 10))"
+					}
+				},
+				{
+					"id": "append-text",
+					"objectClass": "TextInputTChat",
+					"sid": 843110626616616,
+					"parameters": {
+						"text": "Array.AsJSON & newline"
+					}
+				},
+				{
+					"id": "append-text",
+					"objectClass": "TextInputTChat",
+					"sid": 924493292809951,
+					"parameters": {
+						"text": "\"Save faite\" & newline"
+					}
+				},
+				{
+					"id": "send-message",
+					"objectClass": "Multiplayer",
+					"sid": 479529096934374,
+					"parameters": {
+						"peer-id": "\"\"",
+						"tag": "\"PeerToHostData\"",
+						"message": "Array.AsJSON",
+						"mode": "reliable-ordered"
+					}
+				}
+			],
+			"sid": 365786115584576
 		}
 	],
 	"sid": 423672231501610
